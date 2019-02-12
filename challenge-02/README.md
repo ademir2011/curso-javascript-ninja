@@ -4,29 +4,31 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+function ret(primeiro, segundo){ return primeiro+segundo; }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+var rec_func = (ret(1,2) + 5)
 
 // Qual o valor atualizado dessa variável?
-?
+8
 
 // Declare uma nova variável, sem valor.
-?
+var semvalor;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+function nova_func(novovalor){
+    return "O valor da variável agora é valor"+(novovalor+semvalor);
+}
 
 // Invoque a função criada acima.
-?
+nova_func(54);
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
+/* retornou valores */
 
 /*
 Crie uma função com as seguintes características:
@@ -35,19 +37,29 @@ Crie uma função com as seguintes características:
     Preencha todos os valores corretamente!
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
-?
+fucntion argumentos(arg1, arg2, arg3){
+    if ( arg1 === undefined ) {
+        return "Preencha todos os valores corretamente!";
+    } else if ( arg2 === undefined ) {
+        return "Preencha todos os valores corretamente!";
+    } else if ( arg3 === undefined ) {
+        return "Preencha todos os valores corretamente!";
+    } else {
+        return (arg1*arg2*arg3)+2;
+    }
+}
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+argumentos(1,3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//"Preencha todos os valores corretamente!"
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+argumentos(1,1,1);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+//3
 
 /*
 Crie uma função com as seguintes características:
@@ -58,7 +70,11 @@ Crie uma função com as seguintes características:
 5. Se nenhum argumento for passado, retorne o valor booleano `false`.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
-?
+function novafun(arg1, arg2, arg3){
+    if ( arg1 === undefined || arg2 === undefined || arg3 === undefined) {
+        return 
+    }
+}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?

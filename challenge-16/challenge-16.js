@@ -3,6 +3,8 @@
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
+(function(){
+'use strict';
 
 /*
 Declare uma variável chamada `name` que receba seu primeiro nome.
@@ -14,7 +16,9 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 E assim por diante, até a última.
 */
 console.log( 'As letras do seu nome:' );
-// ?
+var name = 'ademir';
+for (var i = 0; i < name.length; i++)
+    console.log(name.charAt(i) + ' é a ' + (i+1) + 'ª letra do meu nome');
 
 /*
 - Declare uma variável chamada `fullName`, que receba seu nome completo,
@@ -29,7 +33,10 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
-// ?
+var fullName = 'ademir-bezerra-da-silva-junior';
+console.log(fullName);
+fullName = fullName.split('-').map( function(item){ return item.charAt(0).toUpperCase()+item.slice(1); }).join(' ');
+console.log(fullName);
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -41,21 +48,24 @@ O resultado final deve ficar mais ou menos assim:
 5 nomes foi somente uma sugestão ;)
 */
 console.log( '\nMeus amigos:' );
-// ?
-
+var arrei = ['ademir','bezerra','silva','junior','mike'];
+arrei = arrei.reduce( function(acumulador, item){ return acumulador+', '+item;});
+arrei = arrei.substring( 0, arrei.lastIndexOf(',') ) + ' e' + arrei.substring( arrei.lastIndexOf(',')+1 );
+arrei += ' são meus amigos.';
+console.log(arrei);
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-// ?
+console.log( 'Roberto'.split('').reverse().join('').replace('o','a').split('').reverse().join('') );
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
-// ?
+console.log( 'Fernando'.slice() )
 
 /*
 Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -67,4 +77,7 @@ de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-// ?
+var myName = 'Ademir';
+console.log( myName.split('').reduce(function( acumulador, item, index ){ return index%2===0 ? acumulador+item.toLowerCase() : acumulador+item.toUpperCase() },'') );
+
+})();
